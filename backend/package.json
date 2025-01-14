@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run build && SET NODE_ENV=development&& node build/server.js",
     "prod": "NODE_ENV=production npm run build && node build/server.js",
-    "build": "npm run clean && npm run build-ts",
+    "build": "npm install && npm run clean && npm run build-ts",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
     "watch-node": "nodemon -r dotenv/config build/server.js",
     "clean": "rimraf ./build",
